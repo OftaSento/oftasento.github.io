@@ -13,7 +13,7 @@
     --color-bg: #FAF6F5;
     --color-text: #5A5655;
     --color-bg-card: #FFF;
-    --color-hover: #FF8F6C;
+    --color-hover: #;
     --color-active: #F57B58;
 }
 
@@ -134,12 +134,12 @@ body {
 
 .hero__cta-btn:hover {
     border-radius: 4px;
-    background-color: var(--color-hover);
+    background-color: color-mix(in srgb, var(--color-accent), #000 4%);
 }
 
 .hero__cta-btn:active {
     border-radius: 4px;
-    background-color: var(--color-active);
+    background-color: color-mix(in srgb, var(--color-accent), #000 10%);
 }
 
 .hero__contact-item {
