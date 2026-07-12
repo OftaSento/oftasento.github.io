@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+        <title>Кирилл Оксенич — UX/UI-дизайнер</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section class="hero">
-        <div class="hero__main-info-container">
-            <div class="hero__img-wrapper">
-                <img src="content/hero/hero-img.jpg" alt="портрет Кирилла">
-            </div>
-            <div class="hero__description">
-                <div class="hero__title-container">
-                    <h1 class="hero__name">Кирилл Оксенич</h1>
-                    <h2 class="hero__role">UX/UI-дизайнер с опытом в продажах</h2>
-                    <div class="hero__subtitle-container">
-                        <p class="hero__subtitle-item">ищу удалённую работу в студии</p>
-                        <p class="hero__subtitle-item">2 года опыта</p>
-                    </div>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section class="container hero">
+                <div class="hero__img"><img src="content/hero/hero-img.jpg" alt="Фото Кирилла"></div>
+                <div class="hero__info card">
+                    <h1>Кирилл Оксенич</h1>
+                    <h2 class="hero__role">UX/UI-дизайнер с опытом в продажах</h2>
+                    <ul class="hero__desc">
+                        <li>ищу удалённую работу в студии</li>
+                        <li>2 года опыта</li>
+                    </ul>
                 </div>
-                <div class="hero__cta-container" >
-                    <a
-                        href="https://t.me/oftasento"
-                        class="hero__cta-btn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        написать мне в телегу
-                    </a>
-                    <div class="hero__contacts-container">
-                        <a href="mailto:kirich29rus@gmail.com" class="hero__contact-item">kirich29rus@gmail.com</a>
-                        <a href="tel:+79531538333" class="hero__contact-item">+7 (953) 153-83-33</a>
-                    </div>
-            </div>
-        </div>
-        </div>
-        <div class="hero__skill-container">
-            <div class="hero__skill-item">
-                <p class="hero__skill-card-title">Tilda</p>
-                <p class="hero__skill-card-text">Уверенно верстаю в Zero Block, настраиваю базовую и пошаговую анимацию. Знаю основы JS и CSS для кастомизации.</p>
-            </div>
-            <div class="hero__skill-item">
-                <p class="hero__skill-card-title">Графика и ИИ</p>
-                <p class="hero__skill-card-text">Чищу контент в Photoshop и Lightroom (ретушь, обрезка, цветкор). Использую нейросети для генерации графики и ускорения рутинной работы.</p>
-            </div>
-            <div class="hero__skill-item">
-                <p class="hero__skill-card-title">Figma</p>
-                <p class="hero__skill-card-text">Собираю аккуратные макеты на компонентах и автолейаутах. Чисто храню слои и готовлю графику к легкой верстке.</p>
-            </div>
-            <div class="hero__skill-item">
-                <p class="hero__skill-card-title">UX/UI-подход</p>
-                <p class="hero__skill-card-text">Думаю головой: кто аудитория, какая цель у страницы, как человек будет по ней ходить, на что смотреть и куда нажимать</p>
-            </div>
-            <div class="hero__skill-item">
-                <p class="hero__skill-card-title">В работе</p>
-                <p class="hero__skill-card-text">Умею отстаивать дизайн-решения перед клиентом или командой, спокойно и адекватно воспринимаю конструктивную критику и правки</p>
-            </div>
-        </div>
-    </section>
-</body>
+                <a href="https://t.me/oftasento" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                    написать мне в телегу
+                </a>
+                <ul class="hero__skill-list">
+                    <li class="card">
+                        <h4>Tilda</h4>
+                        <p>Уверенно верстаю в Zero Block, настраиваю базовую и пошаговую анимацию. Знаю основы JS и CSS для кастомизации.</p>
+                    </li>
+                    <li class="card">
+                        <h4>Графика и ИИ</h4>
+                        <p>Чищу контент в Photoshop и Lightroom (ретушь, обрезка, цветкор). Использую нейросети для генерации графики и ускорения рутинной работы.</p>
+                    </li>
+                    <li class="card">
+                        <h4>Figma</h4>
+                        <p>Собираю аккуратные макеты на компонентах и автолейаутах. Чисто храню слои и готовлю графику к лёгкой вёрстке.</p>
+                    </li>
+                    <li class="card">
+                        <h4>UX/UI-подход</h4>
+                        <p>Думаю головой: кто аудитория, какая цель у страницы, как человек будет по ней ходить, на что смотреть и куда нажимать</p>
+                    </li>
+                    <li class="card">
+                        <h4>В работе</h4>
+                        <p>Умею отстаивать дизайн-решения перед клиентом или командой. Спокойно и адекватно воспринимаю конструктивную критику и правки</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="container cases">
+                
+            </section>
+            <section class="container contacts">
+                
+            </section>
+        </main>
+        <footer></footer>
+    </body>
 </html>

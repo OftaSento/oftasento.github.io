@@ -1,21 +1,4 @@
-:root {
-    --h1: 700 40px / 1 "Golos Text", sans-serif;
-    --h2: 600 32px / 1.05 "Golos Text", sans-serif;
-    --h3: 600 24px / 1.2 "Golos Text", sans-serif;
-    --h4: 400 20px / 1.2 "Golos Text", sans-serif;
-    
-    --text-btn: 600 16px / 1.2 "Golos Text", sans-serif;
-    --text-large: 400 16px / 1.4 "Golos Text", sans-serif;
-    --text-regular: 400 14px / 1.20 "Golos Text", sans-serif;
-    --text-small: 400 12px / 1.20 "Golos Text", sans-serif;
-
-    --color-accent: #FF8562;
-    --color-bg: #FAF6F5;
-    --color-text: #5A5655;
-    --color-bg-card: #FFF;
-    --color-hover: #;
-    --color-active: #F57B58;
-}
+/* ====================== CSS RESET ====================== */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -23,243 +6,198 @@
     padding: 0;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ====================== CSS Variables ====================== */
+
+:root {
+    --bg-color: #FAF6F5;
+    --bg-card-color: #FDFCFC;
+    --accent-color: #FF8562;
+    --text-color: #5A5655;
+    --heading-color: #312B29;
+
+    --heading-h1: 600 48px / 1.0 "Geologica", sans-serif;
+    --heading-h2: 200 40px / 1.05 "Geologica", sans-serif;
+    --heading-h3: 300 24px / 1.20 "Geologica", sans-serif;
+    --heading-h4: 700 16px / 1.40 "Geologica", sans-serif;
+
+    --heading-h1--mobile: 600 40px / 1.0 "Geologica", sans-serif;
+    --heading-h2--mobile: 200 32px / 1.05 "Geologica", sans-serif;
+    --heading-h3--mobile: 300 20px / 1.20 "Geologica", sans-serif; 
+
+    --text-regular: 400 14px / 1.40 "Golos Text", sans-serif;
+    --text-btn--primary: 500 16px / 1.40 "Geologica", sans-serif;
+    --text-btn--secondary: 300 16px / 1.40 "Geologica", sans-serif;
+}
+
+/* ====================== CSS Global ====================== */
+
 body {
-    padding: 0 16px;
-    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: var(--text-regular);
+
+    overflow-x: hidden;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #FAF6F5;
+    min-height: 100vh;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 368px;
+    margin: 0 auto;
+    padding: 40px 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--bg-card-color);
+    padding: 24px 24px 32px 32px;
+    text-wrap: balance;
+    border-radius: 12px;
+    box-shadow: 2px 2px 14px hsl(12 100% 50% / 0.04);
+}
+
+h1 {font: var(--heading-h1--mobile); color: var(--heading-color);}
+h2 {font: var(--heading-h2--mobile); color: var(--heading-color);}
+h3 {font: var(--heading-h3--mobile); color: var(--heading-color);}
+h4 {font: var(--heading-h4); color: var(--accent-color);}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 960px) {
+    .container {
+        max-width: 960px;
+        padding: 64px 24px;
+    }
+    h1 {font: var(--heading-h1);}
+    h2 {font: var(--heading-h2);}
+    h3 {font: var(--heading-h3);}
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1488px;
+    }
+}
+
+/* ====================== BUTTONS ====================== */
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 468px;
+    padding: 18px 24px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition:
+        background-color 200ms ease-in-out,
+        outline 200ms ease-in-out,
+        box-shadow 200ms ease-in-out,
+        transform 10ms ease-in-out;
+}
+
+.btn--primary {
+    color: var(--bg-color);
+    font: var(--text-btn--primary);
+    background-color: var(--accent-color);
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+}
+.btn--primary:hover {
+    background-color: color-mix(in srgb, var(--accent-color), #000 4%);
+    outline: 1px solid var(--accent-color);
+    outline-offset: 2px;
+}
+.btn--primary:active {
+    background-color: color-mix(in srgb, var(--accent-color), #000 8%);
+    transform: scale(0.99);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--accent-color);
+    font: var(--text-btn--secondary);
+    padding: 12px 24px 14px;
+}
+.btn--secondary:hover {
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+}
+.btn--secondary:active {
+    transform: scale(0.99);
+}
+
+/* ====================== Hero Section ====================== */
 
 .hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 368px;
-    gap: 48px;
-    padding: 40px 0;
+    gap: 16px;
 }
 
-.hero__main-info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    
-}
-
-.hero__img-wrapper {
+.hero__img {
     width: 100%;
-    aspect-ratio: 1 / 1;
     border-radius: 12px;
     overflow: hidden;
+    aspect-ratio: 1 / 1;
 }
 
-.hero__img-wrapper img {
+.hero__img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
 }
 
-.hero__description {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.hero__title-container {
-    display: flex;
-    flex-direction: column;
+.hero__info {
     gap: 16px;
-    text-wrap: pretty;
+    padding: 32px;
 }
 
-.hero__subtitle-container {
+.hero__role {
+    font: var(--heading-h4);
+    color: var(--accent-color);
+}
+
+.hero__desc {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.hero__cta-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.hero__contacts-container {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.hero__skill-container {
+.hero__skill-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.hero__name {
-    font: var(--h1);
-    color: var(--color-text);
-}
-
-.hero__role {
-    font: var(--h4);
-    color: var(--color-text);
-}
-
-.hero__subtitle-item {
-    font: var(--text-large);
-    color: var(--color-text);
-}
-
-.hero__cta-btn {
-    display: inline-block;
-    width: 100%;
-    padding: 16px 18px 16px 20px;
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    font: var(--text-btn);
-    text-align: center;
-    text-decoration: none;
-    border-radius: 12px;
-    transition: all 200ms ease-in-out;
-}
-
-.hero__cta-btn:hover {
-    border-radius: 4px;
-    background-color: color-mix(in srgb, var(--color-accent), #000 4%);
-}
-
-.hero__cta-btn:active {
-    border-radius: 4px;
-    background-color: color-mix(in srgb, var(--color-accent), #000 10%);
-}
-
-.hero__contact-item {
-    color: var(--color-text);
-    font: var(--text-small);
-    text-decoration: none;
-}
-
-.hero__skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background-color: var(--color-bg-card);
-    padding: 24px 32px 32px 32px;
-    border-radius: 12px;
-}
-
-.hero__skill-card-title {
-    font: var(--text-large);
-    color: var(--color-accent);
-}
-
-.hero__skill-card-text {
-    font: var(--text-regular);
-    color: var(--color-text);
-    text-wrap: balance;
-}
-
-@media (min-width: 640px) {
-    .hero {
-        max-width: 768px;
-    }
-    .hero__main-info-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: stretch;
-        gap: 16px;
-        width: 100%;
-        height: 360px;
-    }
-    .hero__img-wrapper {
-        min-width: 0;
-        min-height: 0;
-        aspect-ratio: auto;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-    .hero__img-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .hero__description {
-        min-width: 0;
-        justify-content: space-between;
-    }
-    .hero__skill-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        width: 100%;
-    }
-    .hero__skill-item:last-child {
-        grid-column: span 2;
-    }
-
-}
-
-@media (min-width: 960px) {
-    .hero {
-        padding: 64px 0;
-    }
-    .hero__main-info-container {
-       height: auto;
-    }
-    .hero__description {
-        padding: 32px 0;
-        gap: 96px;
-        justify-content: flex-start;
-    }
-}
-
-@media (min-width: 1280px) {
-    body {
-        padding: 0 24px;
-    }
-    .hero {
-        max-width: 1488px;
-        padding: 96px 0;
-        gap: 24px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 1fr auto;
-        width: 100%;
-    }
-    .hero__main-info-container {
-        display: contents;
-    }
-    .hero__description {
-        display: contents;
-    }
-    .hero__title-container {
-        grid-column: 1 / 4;
-        grid-row: 1 / 3;
-        align-self: flex-start;
-        text-align: right;
-        padding-top: 48px;
-    }
-    .hero__img-wrapper {
-        grid-column: 4 / 7;
-        grid-row: 1;
-    }
-    .hero__cta-container {
-        grid-column: 4 / 7;
-        grid-row: 2;
-        align-self: flex-start;
-    }
-    .hero__skill-container {
-        grid-column: 7 / 13;
-        grid-row: 1 / 3;
-        gap: 24px;
-    }
-
 }
