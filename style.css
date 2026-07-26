@@ -93,10 +93,23 @@ main {
 
 h1 {font: var(--heading-h1--mobile); color: var(--heading-color);}
 h2 {font: var(--heading-h2--mobile); color: var(--heading-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 8px;
+    position: relative;
     display: inline-block;
     width: fit-content;
+}
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    box-shadow:
+    4px 1px 10px hsl(13 100% 69% / 0.29),
+    17px 3px 18px hsl(13 100% 69% / 0.26),
+    39px 8px 24px hsl(13 100% 69% / 0.15),
+    70px 14px 28px hsl(13 100% 69% / 0.04);
 }
 h3 {font: var(--heading-h3--mobile); color: var(--heading-color);}
 h4 {font: var(--heading-h4); color: var(--accent-color);}
@@ -206,6 +219,8 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
     border-bottom: none;
     padding: 0;
 }
+
+.hero__role::after { display: none; }
 
 .hero__desc {
     display: flex;
