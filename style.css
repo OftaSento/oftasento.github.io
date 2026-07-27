@@ -366,8 +366,7 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
 /* ====================== Contact Section ====================== */
 
 .contact {
-    height: 100vh;
-    align-content: center;
+
 }
 
 .contact__card {
@@ -379,6 +378,7 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
     border-radius: 12px;
     box-shadow: 2px 2px 14px hsl(12 100% 50% / 0.04);
     width: 100%;
+    margin-bottom: 35%;
 }
 
 .contact__card h2, .contact__card .btn {
@@ -388,5 +388,5 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
 
 @media (min-width: 1280px) {
     .contact { display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr); }
-    .contact__card {grid-column: 2 / 4}
+    .contact__card {grid-column: 2 / 4; align-self: start; }
 }
