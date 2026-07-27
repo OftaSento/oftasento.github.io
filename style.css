@@ -96,12 +96,13 @@ h2 {font: var(--heading-h2--mobile); color: var(--heading-color);
     position: relative;
     display: inline-block;
     width: fit-content;
+    padding-bottom: 16px;
 }
 h2::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: 0;
     width: 100%;
     height: 2px;
     background-color: var(--accent-color);
@@ -119,17 +120,15 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
 }
 
 @media (min-width: 640px) {
-    .container {
-        max-width: 960px;
-    }
+    .container { max-width: 732px; }
+    h3 { font: var(--heading-h3); }
 }
 
 @media (min-width: 960px) {
     .container { padding: 64px 24px; }
-    .grid { gap: 24px; }
     h1 { font: var(--heading-h1); }
     h2 { font: var(--heading-h2); }
-    h3 { font: var(--heading-h3); }
+    
 }
 
 @media (min-width: 1280px) {
@@ -311,18 +310,17 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
     .cases__desc-1-col { display: flex; flex-direction: column; }
     .cases__desc-2-col { display: flex; flex-direction: column; }
     .cases .btn { margin-top: auto; }
+    .cases h2, .cases h3 { margin: 0 auto; }
 }
 
 @media (min-width: 960px) {
     .cases__item, .cases__desc, .cases__desc-1-col, .cases__desc-2-col, .cases__img-grid { gap: 24px; }
-    .cases h2 { margin-bottom: 32px; }
     .cases__item { margin-bottom: 40px;}
 }
 
 @media (min-width: 1280px) {
     .cases__item { grid-template-columns: repeat(4, 1fr);}
     .cases__item h3, .cases__desc, .cases__img-grid { grid-column: 2 / -2; }
-    .cases h2 { margin-left: calc((100% - 72px) / 4 + 24px)}
 }
 
 /* ====================== 1st img grid ====================== */
