@@ -365,10 +365,6 @@ h4 {font: var(--heading-h4); color: var(--accent-color);}
 
 /* ====================== Contact Section ====================== */
 
-.contact {
-
-}
-
 .contact__card {
     display: flex;
     flex-direction: column;
